@@ -3,53 +3,83 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Gallery</title>
+<title>Benchmark Validation Gallery</title>
 <style>
-body{margin:0;background:#f4f6f7;color:#17202a;font-family:Inter,Segoe UI,Arial,sans-serif;}
-header{padding:26px 30px 14px;background:#fff;border-bottom:1px solid #dde3e7;}
-h1{margin:0;font-size:28px;font-weight:700;letter-spacing:0;}
-main{padding:24px 30px 38px;display:flex;flex-wrap:wrap;gap:18px;}
-figure{width:min(100%,360px);margin:0;background:#fff;border:1px solid #dde3e7;border-radius:8px;overflow:hidden;box-shadow:0 8px 20px rgba(20,32,48,.06);}
-img{display:block;width:100%;height:auto;}
+:root{color-scheme:light;--ink:#142033;--muted:#526171;--line:#d9e1e6;--paper:#fff;--bg:#f3f6f7;--ok:#0b6b61;}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--ink);font-family:Inter,Segoe UI,Arial,sans-serif;}
+header{background:var(--paper);border-bottom:1px solid var(--line);padding:32px 34px 22px;}
+.wrap{max-width:1180px;margin:0 auto;}
+h1{margin:0 0 10px;font-size:34px;line-height:1.08;letter-spacing:0;}
+p{margin:0;color:var(--muted);line-height:1.5;}
+.lead{max-width:880px;font-size:16px;}
+.stats{display:grid;grid-template-columns:repeat(auto-fit,minmax(170px,1fr));gap:12px;margin-top:20px;}
+.stat{border:1px solid var(--line);background:#f8fafb;border-radius:8px;padding:12px 14px;}
+.stat strong{display:block;font-size:20px;color:var(--ink);}
+.stat span{display:block;margin-top:2px;font-size:12px;text-transform:uppercase;letter-spacing:.05em;color:#677585;}
+main{max-width:1180px;margin:0 auto;padding:26px 34px 44px;display:grid;grid-template-columns:repeat(auto-fit,minmax(310px,1fr));gap:18px;}
+article{background:var(--paper);border:1px solid var(--line);border-radius:8px;overflow:hidden;box-shadow:0 10px 24px rgba(19,32,48,.07);}
+img{display:block;width:100%;height:auto;background:#111827;}
+.body{padding:14px 15px 16px;}
+h2{margin:0 0 8px;font-size:17px;line-height:1.25;letter-spacing:0;}
+.meta{display:flex;flex-wrap:wrap;gap:7px;margin:0 0 10px;}
+.pill{font-size:11px;text-transform:uppercase;letter-spacing:.045em;border-radius:999px;padding:4px 8px;background:#edf2f4;color:#334455;}
+.pass{background:#ddf4ee;color:var(--ok);}
+.copy{font-size:14px;margin-top:8px;}
+.accuracy{font-size:13px;color:#334455;margin-top:10px;border-top:1px solid #edf1f3;padding-top:10px;}
+footer{max-width:1180px;margin:0 auto;padding:0 34px 34px;color:#697787;font-size:13px;}
 </style>
 </head>
 <body>
-<header><h1>Gallery</h1></header>
+<header>
+<div class="wrap">
+<h1>Benchmark Validation Gallery</h1>
+<p class="lead">A public-facing set of visual checks from standard kinetic theory and rarefied-gas benchmarks. The page shows the benchmark family, where the reference problem comes from, and a compact accuracy statistic. It does not publish solver code, run configuration, mesh settings, or internal implementation details.</p>
+<div class="stats">
+<div class="stat"><strong>34</strong><span>validated cases</span></div>
+<div class="stat"><strong>34 / 34</strong><span>reference checks passed</span></div>
+<div class="stat"><strong>1.74e-3</strong><span>worst max error</span></div>
+<div class="stat"><strong>6.08e-4</strong><span>p95 max error</span></div>
+<div class="stat"><strong>1.11e-16</strong><span>median max error</span></div>
+</div>
+</div>
+</header>
 <main>
-<figure><img src="visual-01.gif" alt=""></figure>
-<figure><img src="visual-02.gif" alt=""></figure>
-<figure><img src="visual-03.gif" alt=""></figure>
-<figure><img src="visual-04.gif" alt=""></figure>
-<figure><img src="visual-05.gif" alt=""></figure>
-<figure><img src="visual-06.gif" alt=""></figure>
-<figure><img src="visual-07.gif" alt=""></figure>
-<figure><img src="visual-08.gif" alt=""></figure>
-<figure><img src="visual-09.gif" alt=""></figure>
-<figure><img src="visual-10.gif" alt=""></figure>
-<figure><img src="visual-11.gif" alt=""></figure>
-<figure><img src="visual-12.gif" alt=""></figure>
-<figure><img src="visual-13.gif" alt=""></figure>
-<figure><img src="visual-14.gif" alt=""></figure>
-<figure><img src="visual-15.gif" alt=""></figure>
-<figure><img src="visual-16.gif" alt=""></figure>
-<figure><img src="visual-17.gif" alt=""></figure>
-<figure><img src="visual-18.gif" alt=""></figure>
-<figure><img src="visual-19.gif" alt=""></figure>
-<figure><img src="visual-20.gif" alt=""></figure>
-<figure><img src="visual-21.gif" alt=""></figure>
-<figure><img src="visual-22.gif" alt=""></figure>
-<figure><img src="visual-23.gif" alt=""></figure>
-<figure><img src="visual-24.gif" alt=""></figure>
-<figure><img src="visual-25.gif" alt=""></figure>
-<figure><img src="visual-26.gif" alt=""></figure>
-<figure><img src="visual-27.gif" alt=""></figure>
-<figure><img src="visual-28.gif" alt=""></figure>
-<figure><img src="visual-29.gif" alt=""></figure>
-<figure><img src="visual-30.gif" alt=""></figure>
-<figure><img src="visual-31.gif" alt=""></figure>
-<figure><img src="visual-32.gif" alt=""></figure>
-<figure><img src="visual-33.gif" alt=""></figure>
-<figure><img src="visual-34.gif" alt=""></figure>
+<article><img src="visual-01.gif" alt=""><div class="body"><h2>BKW Homogeneous Relaxation</h2><div class="meta"><span class="pill">Kinetic benchmark</span><span class="pill pass">passed</span></div><p class="copy">Origin: Bobylev, Krook, and Wu exact homogeneous Maxwell-molecule solution, a classical Boltzmann-equation reference.</p><p class="accuracy">Accuracy: max error 4.44e-16, about 15.35 decimal digits.</p></div></article>
+<article><img src="visual-02.gif" alt=""><div class="body"><h2>Free-Molecular Couette Flow</h2><div class="meta"><span class="pill">Wall flow</span><span class="pill pass">passed</span></div><p class="copy">Origin: standard rarefied-gas shear flow between moving plates in the collisionless limit.</p><p class="accuracy">Accuracy: max error 8.16e-17, about 16.00 decimal digits.</p></div></article>
+<article><img src="visual-03.gif" alt=""><div class="body"><h2>Free-Molecular Fourier Flow</h2><div class="meta"><span class="pill">Heat transfer</span><span class="pill pass">passed</span></div><p class="copy">Origin: standard heat-transfer slab benchmark between diffuse thermal walls.</p><p class="accuracy">Accuracy: max error 4.85e-17, about 16.00 decimal digits.</p></div></article>
+<article><img src="visual-04.gif" alt=""><div class="body"><h2>Thermal Transpiration Slab</h2><div class="meta"><span class="pill">Rarefied flow</span><span class="pill pass">passed</span></div><p class="copy">Origin: thermal-transpiration pressure balance, a standard rarefied microflow effect.</p><p class="accuracy">Accuracy: max error 7.30e-17, about 16.00 decimal digits.</p></div></article>
+<article><img src="visual-05.gif" alt=""><div class="body"><h2>Equilibrium Slab Null Check</h2><div class="meta"><span class="pill">Conservation</span><span class="pill pass">passed</span></div><p class="copy">Origin: equal-wall equilibrium slab, used to check cancellation of fluxes and moments.</p><p class="accuracy">Accuracy: max error 1.63e-16, about 15.79 decimal digits.</p></div></article>
+<article><img src="visual-06.gif" alt=""><div class="body"><h2>Thermal Couette Flow</h2><div class="meta"><span class="pill">Wall flow</span><span class="pill pass">passed</span></div><p class="copy">Origin: combined shear and heat-transfer slab benchmark for rarefied gas dynamics.</p><p class="accuracy">Accuracy: max error 6.96e-17, about 16.00 decimal digits.</p></div></article>
+<article><img src="visual-07.gif" alt=""><div class="body"><h2>Diffuse-Wall Effusion</h2><div class="meta"><span class="pill">Boundary law</span><span class="pill pass">passed</span></div><p class="copy">Origin: Maxwellian diffuse-wall effusion flux, a standard wall-emission reference.</p><p class="accuracy">Accuracy: max error 1.35e-16, about 15.87 decimal digits.</p></div></article>
+<article><img src="visual-08.gif" alt=""><div class="body"><h2>Drifted Plate Flux</h2><div class="meta"><span class="pill">Free molecular</span><span class="pill pass">passed</span></div><p class="copy">Origin: one-sided flux from a drifting Maxwellian stream onto a plate.</p><p class="accuracy">Accuracy: max error 1.08e-18, about 16.00 decimal digits.</p></div></article>
+<article><img src="visual-09.gif" alt=""><div class="body"><h2>High-Speed Plate Flux</h2><div class="meta"><span class="pill">Rarefied aero</span><span class="pill pass">passed</span></div><p class="copy">Origin: high-speed free-molecular plate loading, a basic rarefied aerodynamic reference.</p><p class="accuracy">Accuracy: max error 4.16e-17, about 16.00 decimal digits.</p></div></article>
+<article><img src="visual-10.gif" alt=""><div class="body"><h2>Flat-Plate Angle Sweep</h2><div class="meta"><span class="pill">Rarefied aero</span><span class="pill pass">passed</span></div><p class="copy">Origin: free-molecular flat-plate incidence-angle sweep from rarefied aerodynamic theory.</p><p class="accuracy">Accuracy: max error 2.60e-18, about 16.00 decimal digits.</p></div></article>
+<article><img src="visual-11.gif" alt=""><div class="body"><h2>Flat-Plate Speed Sweep</h2><div class="meta"><span class="pill">Rarefied aero</span><span class="pill pass">passed</span></div><p class="copy">Origin: free-molecular plate loading as incoming speed varies.</p><p class="accuracy">Accuracy: max error 8.38e-16, about 15.08 decimal digits.</p></div></article>
+<article><img src="visual-12.gif" alt=""><div class="body"><h2>Hot-Cold Aperture Counterflow</h2><div class="meta"><span class="pill">Molecular flow</span><span class="pill pass">passed</span></div><p class="copy">Origin: reservoir-to-reservoir molecular flux through an aperture.</p><p class="accuracy">Accuracy: max error 4.44e-16, about 15.35 decimal digits.</p></div></article>
+<article><img src="visual-13.gif" alt=""><div class="body"><h2>Isothermal Aperture Conductance</h2><div class="meta"><span class="pill">Molecular flow</span><span class="pill pass">passed</span></div><p class="copy">Origin: classical free-molecular conductance through an aperture.</p><p class="accuracy">Accuracy: max error 1.11e-16, about 15.95 decimal digits.</p></div></article>
+<article><img src="visual-14.gif" alt=""><div class="body"><h2>Thermal Aperture Effusion</h2><div class="meta"><span class="pill">Molecular flow</span><span class="pill pass">passed</span></div><p class="copy">Origin: unequal-temperature reservoir effusion through a small opening.</p><p class="accuracy">Accuracy: max error 2.22e-16, about 15.65 decimal digits.</p></div></article>
+<article><img src="visual-15.gif" alt=""><div class="body"><h2>Zero-Mass Thermal Aperture</h2><div class="meta"><span class="pill">Molecular flow</span><span class="pill pass">passed</span></div><p class="copy">Origin: thermal-transpiration pressure balance with zero net mass flux.</p><p class="accuracy">Accuracy: max error 2.22e-16, about 15.65 decimal digits.</p></div></article>
+<article><img src="visual-16.gif" alt=""><div class="body"><h2>Diffuse-Wall Cosine Law</h2><div class="meta"><span class="pill">Boundary law</span><span class="pill pass">passed</span></div><p class="copy">Origin: Knudsen cosine law for diffuse molecular emission from a wall.</p><p class="accuracy">Accuracy: max error 1.36e-19, about 16.00 decimal digits.</p></div></article>
+<article><img src="visual-17.gif" alt=""><div class="body"><h2>Rayleigh Impulsive Wall</h2><div class="meta"><span class="pill">Unsteady wall flow</span><span class="pill pass">passed</span></div><p class="copy">Origin: classical impulsively moving wall problem in the collisionless limit.</p><p class="accuracy">Accuracy: max error 2.30e-19, about 16.00 decimal digits.</p></div></article>
+<article><img src="visual-18.gif" alt=""><div class="body"><h2>Fast Rayleigh Wall</h2><div class="meta"><span class="pill">Unsteady wall flow</span><span class="pill pass">passed</span></div><p class="copy">Origin: stronger variant of the standard Rayleigh moving-wall reference.</p><p class="accuracy">Accuracy: max error 9.49e-19, about 16.00 decimal digits.</p></div></article>
+<article><img src="visual-19.gif" alt=""><div class="body"><h2>Impulsive Thermal Wall</h2><div class="meta"><span class="pill">Heat transfer</span><span class="pill pass">passed</span></div><p class="copy">Origin: thermal wall replacement problem for collisionless gas heating.</p><p class="accuracy">Accuracy: max error 5.42e-19, about 16.00 decimal digits.</p></div></article>
+<article><img src="visual-20.gif" alt=""><div class="body"><h2>Cold-Wall Relaxation</h2><div class="meta"><span class="pill">Heat transfer</span><span class="pill pass">passed</span></div><p class="copy">Origin: cooled-wall counterpart of the thermal wall relaxation reference.</p><p class="accuracy">Accuracy: max error 8.67e-19, about 16.00 decimal digits.</p></div></article>
+<article><img src="visual-21.gif" alt=""><div class="body"><h2>Gaussian Packet Transport</h2><div class="meta"><span class="pill">Free transport</span><span class="pill pass">passed</span></div><p class="copy">Origin: analytic ballistic spreading of a Gaussian packet.</p><p class="accuracy">Accuracy: max error 1.05e-13, about 12.98 decimal digits.</p></div></article>
+<article><img src="visual-22.gif" alt=""><div class="body"><h2>Long-Time Gaussian Packet</h2><div class="meta"><span class="pill">Free transport</span><span class="pill pass">passed</span></div><p class="copy">Origin: longer-time Gaussian packet spreading and moment preservation reference.</p><p class="accuracy">Accuracy: max error 3.47e-13, about 12.46 decimal digits.</p></div></article>
+<article><img src="visual-23.gif" alt=""><div class="body"><h2>Absorbing-Wall Depletion</h2><div class="meta"><span class="pill">Boundary loss</span><span class="pill pass">passed</span></div><p class="copy">Origin: free-transport survival probability near an absorbing terminal wall.</p><p class="accuracy">Accuracy: max error 2.22e-16, about 15.65 decimal digits.</p></div></article>
+<article><img src="visual-24.gif" alt=""><div class="body"><h2>Collisionless Riemann Fan</h2><div class="meta"><span class="pill">Riemann problem</span><span class="pill pass">passed</span></div><p class="copy">Origin: left-right Maxwellian interface with exact free-transport fan structure.</p><p class="accuracy">Accuracy: max error 6.35e-16, about 15.20 decimal digits.</p></div></article>
+<article><img src="visual-25.gif" alt=""><div class="body"><h2>Strong Riemann Fan</h2><div class="meta"><span class="pill">Riemann problem</span><span class="pill pass">passed</span></div><p class="copy">Origin: stronger jump variant of the kinetic Riemann fan reference.</p><p class="accuracy">Accuracy: max error 9.97e-16, about 15.00 decimal digits.</p></div></article>
+<article><img src="visual-26.gif" alt=""><div class="body"><h2>Sinusoidal Phase Mixing</h2><div class="meta"><span class="pill">Phase mixing</span><span class="pill pass">passed</span></div><p class="copy">Origin: ballistic damping of a sinusoidal density mode.</p><p class="accuracy">Accuracy: max error 1.22e-15, about 14.91 decimal digits.</p></div></article>
+<article><img src="visual-27.gif" alt=""><div class="body"><h2>High-Wave Phase Mixing</h2><div class="meta"><span class="pill">Phase mixing</span><span class="pill pass">passed</span></div><p class="copy">Origin: higher-wave-number variant of the ballistic phase-mixing reference.</p><p class="accuracy">Accuracy: max error 3.51e-17, about 16.00 decimal digits.</p></div></article>
+<article><img src="visual-28.gif" alt=""><div class="body"><h2>Moving Specular Piston</h2><div class="meta"><span class="pill">Moving wall</span><span class="pill pass">passed</span></div><p class="copy">Origin: free-molecular load on a moving specular wall.</p><p class="accuracy">Accuracy: max error 1.74e-3, about 2.76 decimal digits.</p></div></article>
+<article><img src="visual-29.gif" alt=""><div class="body"><h2>Retreating Specular Piston</h2><div class="meta"><span class="pill">Moving wall</span><span class="pill pass">passed</span></div><p class="copy">Origin: low-hit-rate tail-flux variant of the moving-wall load problem.</p><p class="accuracy">Accuracy: max error 1.74e-3, about 2.76 decimal digits.</p></div></article>
+<article><img src="visual-30.gif" alt=""><div class="body"><h2>Mixed Wall Accommodation</h2><div class="meta"><span class="pill">Boundary law</span><span class="pill pass">passed</span></div><p class="copy">Origin: Maxwell mixed specular-diffuse accommodation law.</p><p class="accuracy">Accuracy: max error 0.00e+0, about 16.00 decimal digits.</p></div></article>
+<article><img src="visual-31.gif" alt=""><div class="body"><h2>Specular-Slab Eigenmode</h2><div class="meta"><span class="pill">Wall reflection</span><span class="pill pass">passed</span></div><p class="copy">Origin: phase mixing with exact specular-wall characteristic folding.</p><p class="accuracy">Accuracy: max error 1.22e-15, about 14.91 decimal digits.</p></div></article>
+<article><img src="visual-32.gif" alt=""><div class="body"><h2>Specular Bounce Characteristics</h2><div class="meta"><span class="pill">Wall reflection</span><span class="pill pass">passed</span></div><p class="copy">Origin: exact trajectory folding between specular slab walls.</p><p class="accuracy">Accuracy: max error 0.00e+0, about 16.00 decimal digits.</p></div></article>
+<article><img src="visual-33.gif" alt=""><div class="body"><h2>Effusive Beam Speed Law</h2><div class="meta"><span class="pill">Molecular beam</span><span class="pill pass">passed</span></div><p class="copy">Origin: classical effusive molecular beam speed distribution.</p><p class="accuracy">Accuracy: max error 0.00e+0, about 16.00 decimal digits.</p></div></article>
+<article><img src="visual-34.gif" alt=""><div class="body"><h2>Effusive Plume Detector</h2><div class="meta"><span class="pill">Molecular plume</span><span class="pill pass">passed</span></div><p class="copy">Origin: cosine-law aperture plume projected onto a detector plane.</p><p class="accuracy">Accuracy: max error 1.11e-16, about 15.95 decimal digits.</p></div></article>
 </main>
+<footer>Accuracy values are rounded public-facing validation statistics. This site intentionally omits source code, solver configuration, and detailed run parameters.</footer>
 </body>
 </html>
