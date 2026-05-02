@@ -1,3 +1,5 @@
-# Gallery
+# Benchmark Validation Gallery
 
-Static image gallery for GitHub Pages.
+Public GitHub Pages site showing benchmark visuals, plain-language reference origins, and rounded verification statistics.
+
+The repository contains only static site assets.
